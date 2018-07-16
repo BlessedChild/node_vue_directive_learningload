@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>ArthurSlog</title>
+    </head>
+    <body>
+        <div id="app">
+        <p>Hello  {{ rawHtml }}                  </p>
+        <p>Hello  <span v-html="rawHtml"></span> </p>
+        </div>
+        <script>
+        new Vue({
+            el: '#app',
+            data: {
+                rawHtml: '<span style="color:red">ArthurSlog</span>'
+            }
+        })
+        </script>
+    </body>
+</html>

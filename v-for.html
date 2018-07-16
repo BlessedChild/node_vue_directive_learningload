@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>ArthurSlog</title>
+    </head>
+    <body>
+        <div id="app">
+            <div v-for="item in items">
+            {{ item.text }}
+            </div>
+        </div>
+        <script>
+        new Vue({
+            el: '#app',
+            data: {
+                items: [
+                    {id: 0, text: 'Hello ArthurSlog~ id: 0' + '\n'},
+                    {id: 1, text: 'Hello ArthurSlog~ id: 1' + '\n'},
+                    {id: 2, text: 'Hello ArthurSlog~ id: 2' + '\n'}
+                ]
+            }
+        })
+        </script>
+    </body>
+</html>
