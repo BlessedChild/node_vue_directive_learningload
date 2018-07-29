@@ -36,7 +36,7 @@ router.get('/signin', async (ctx) => {
     var addSql = 'SELECT * FROM ArthurSlogAccount WHERE AccountName=?';
     var addSqlParams = [response.name];
 
-    ctx.body = await new Promise((resolve, reject) => {
+    var datas = await new Promise((resolve, reject) => {
 
         connection.query(addSql, addSqlParams, function (err, result) {
             if (err) {
@@ -54,7 +54,11 @@ router.get('/signin', async (ctx) => {
             }
         });
     });
-    
+
+    if(datas){
+        ctx.body = datas;
+    }
+
     /*
     let myFirstPromise = new Promise((resolve, reject) => {
         // We call resolve(...) when what we were doing asynchronously was successful, and reject(...) when it failed.
@@ -84,7 +88,10 @@ router.get('/signin', async (ctx) => {
     console.log(successMessage);
     });
     */
+
     connection.end();
+    
+    
 });
 
 //
