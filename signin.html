@@ -3,25 +3,28 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" >
     <title>signin_ArthurSlog</title>
 </head>
 
 <body>
 
-    <div>This is signin's page by ArthurSlog</div>
-    <p>Singin</p>
-    <form action="http://127.0.0.1:3000/signin" method="GET">
-        Name: <br>
-        <input type="text" name="name"> 
+    <div class="signin-container">
+        <div>This is signin's page by ArthurSlog</div>
+        <p>Singin</p>
+        <form action="http://127.0.0.1:3000/signin" method="GET">
+            Name: <br>
+            <input type="text" name="name"> 
+            <br>
+            Password: <br>
+            <input type="text" name="password">
+            <br><br>
+            <input type="submit" value="登陆">
+        </form>
+        <a href="./account.html">Signin</a>
         <br>
-        Password: <br>
-        <input type="text" name="password">
-        <br><br>
-        <input type="submit" value="登陆">
-    </form>
-    <a href="./account.html">Signin</a>
-    <br>
-    <a href="./index.html">Return index's page</a>
+        <a href="./index.html">Return index's page</a>
+    </div>
 
 </body>
 

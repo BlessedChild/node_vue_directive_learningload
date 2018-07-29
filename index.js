@@ -55,10 +55,11 @@ router.get('/signin', async (ctx) => {
         });
     });
 
+    
     if(datas){
-        ctx.body = datas;
+        ctx.redirect('account.html');
     }
-
+    
     /*
     let myFirstPromise = new Promise((resolve, reject) => {
         // We call resolve(...) when what we were doing asynchronously was successful, and reject(...) when it failed.
@@ -88,10 +89,7 @@ router.get('/signin', async (ctx) => {
     console.log(successMessage);
     });
     */
-
-    connection.end();
-    
-    
+    connection.end();  
 });
 
 //
@@ -113,7 +111,6 @@ router.get('/signup', async (ctx) => {
         }
         console.log('connected as id ' + connection.threadId);
     });
-    
 
     var response = {
         "name": ctx.query.name,
