@@ -3,75 +3,126 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css" >
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>signup_ArthurSlog</title>
 </head>
 
 <body>
 
-    <div class="signup-container">
+    <div id="signup-container">
         <div>This is signup's page by ArthurSlog</div>
         <p>Singup</p>
+
         <form action="http://127.0.0.1:3000/signup" method="GET">
-            Account: <br>
-            <input type="text" name="name"> 
+            Account:
             <br>
-            Password: <br>
+            <input type="text" name="name">
+            <br> Password:
+            <br>
             <input type="text" name="password">
+            <br> Again Password:
             <br>
-            Again Password: <br>
             <input type="text" name="repassword">
+            <br> First Name:
             <br>
-            First Name: <br>
             <input type="text" name="firstname">
+            <br> Last Name:
             <br>
-            Last Name: <br>
             <input type="text" name="lastname">
             <br>
-            Birthday: <br>
-            <input type="text" name="birthday">
+
             <br>
-            Sex: <br>
-            <input type="text" name="sex">
+            <div>
+                Birthday:
+                <br>
+                <input type="text" name="birthday">
+                <br>
+            </div>
             <br>
-            Age: <br>
-            <input type="text" name="age">
+
             <br>
-            Wechart: <br>
+            <div>
+                <span>Sex: {{ sex }}</span>
+                <br>
+                <input type="radio" id="one" value="Male" v-model="sex">
+                <label for="one">Male</label>
+                <br>
+                <input type="radio" id="two" value="Female" v-model="sex">
+                <label for="two">Female</label>
+            </div>
+            <br>
+
+            <br>
+            <div>
+                <span>Age: {{ age }}</span>
+                <br>
+                <select v-model="age">
+                    <option disabled value="">Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                </select>
+            </div>
+            <br>
+
+            <br> Wechart:
+            <br>
             <input type="text" name="wechart">
+            <br> QQ:
             <br>
-            QQ: <br>
             <input type="text" name="qq">
+            <br> Email:
             <br>
-            Email: <br>
             <input type="text" name="email">
+            <br> Contury:
             <br>
-            Contury: <br>
             <input type="text" name="contury">
+            <br> Address:
             <br>
-            Address: <br>
             <input type="text" name="address">
+            <br> Phone:
             <br>
-            Phone: <br>
             <input type="text" name="phone">
+            <br> Websize:
             <br>
-            Websize: <br>
             <input type="text" name="websize">
+            <br> Github:
             <br>
-            Github: <br>
             <input type="text" name="github">
+            <br> Bio:
             <br>
-            Bio: <br>
             <input type="text" name="bio">
-            <br><br>
+            <br>
+            <br>
             <input type="submit" value="完成注册">
         </form>
+
         <a href="./form.html">Signup</a>
         <br>
         <a href="./index.html">Return index's page</a>
-        <br><br>
-    </div>  
+        <br>
+        <br>
+    </div>
 
+    <script src="./js/signup.js"></script>
 </body>
 
 </html>
