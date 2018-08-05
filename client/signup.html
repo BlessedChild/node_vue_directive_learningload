@@ -16,21 +16,46 @@
         <p>Singup</p>
 
         <form action="http://127.0.0.1:3000/signup" method="GET">
-            Account:
+
             <br>
-            <input type="text" name="name">
-            <br> Password:
+            <div>
+                Account:
+                <br>
+                <input type="text" name="name">
+            </div>
             <br>
-            <input type="text" name="password">
-            <br> Again Password:
+
             <br>
-            <input type="text" name="repassword">
-            <br> First Name:
+            <div>
+                Password:
+                <br>
+                <input type="text" name="password">
+            </div>
             <br>
-            <input type="text" name="firstname">
-            <br> Last Name:
+
             <br>
-            <input type="text" name="lastname">
+            <div>
+                Again Password:
+                <br>
+                <input type="text" name="repassword">
+            </div>
+            <br>
+
+
+            <br>
+            <div>
+                First Name:
+                <br>
+                <input type="text" name="firstname">
+            </div>
+            <br>
+
+            <br>
+            <div>
+                Last Name:
+                <br>
+                <input type="text" name="lastname">
+            </div>
             <br>
 
             <br>
@@ -38,7 +63,6 @@
                 Birthday:
                 <br>
                 <input type="text" name="birthday">
-                <br>
             </div>
             <br>
 
@@ -58,7 +82,7 @@
             <div>
                 <span>Age: {{ age }}</span>
                 <br>
-                <select v-model="age">
+                <select v-model="age" name="age">
                     <option disabled value="">Select</option>
                     <option>1</option>
                     <option>2</option>
@@ -83,40 +107,82 @@
             </div>
             <br>
 
-            <br> Wechart:
             <br>
-            <input type="text" name="wechart">
-            <br> QQ:
+            <div>
+                Wechart:
+                <br>
+                <input type="text" name="wechart">
+            </div>
             <br>
-            <input type="text" name="qq">
-            <br> Email:
+
             <br>
-            <input type="text" name="email">
-            <br> Contury:
+            <div>
+                QQ:
+                <br>
+                <input type="text" name="qq">
+            </div>
             <br>
-            <input type="text" name="contury">
-            <br> Address:
+
             <br>
-            <input type="text" name="address">
-            <br> Phone:
+            <div>
+                Email:
+                <br>
+                <input type="text" name="email">
+            </div>
             <br>
-            <input type="text" name="phone">
-            <br> Websize:
+
             <br>
-            <input type="text" name="websize">
-            <br> Github:
+            <div>
+                Contury:
+                <br>
+                <input type="text" name="contury">
+            </div>
             <br>
-            <input type="text" name="github">
-            <br> Bio:
+
             <br>
-            <input type="text" name="bio">
+            <div>
+                Address:
+                <br>
+                <input type="text" name="address">
+            </div>
             <br>
+
+            <br>
+            <div>
+                Phone:
+                <br>
+                <input type="text" name="phone">
+            </div>
+            <br>
+
+            <br>
+            <div>
+                Websize:
+                <br>
+                <input type="text" name="websize">
+            </div>
+            <br>
+
+            <br>
+            <div>
+                Github:
+                <br>
+                <input type="text" name="github">
+            </div>
+            <br>
+
+            <br>
+            <div>
+                Bio:
+                <br>
+                <input type="text" name="bio">
+            </div>
+            <br>
+
             <br>
             <input type="submit" value="完成注册">
         </form>
 
-        <a href="./form.html">Signup</a>
-        <br>
         <a href="./index.html">Return index's page</a>
         <br>
         <br>
