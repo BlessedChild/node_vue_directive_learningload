@@ -15,167 +15,149 @@
         <div>This is signup's page by ArthurSlog</div>
         <p>Singup</p>
 
-        <form action="http://127.0.0.1:3000/signup" method="GET">
+        <form id="form" v-on:submit="addUser">
 
             <br>
             <div>
-                Account:
+                Account: {{ name }}
                 <br>
-                <input type="text" name="name">
+                <input type="text" v-model="name" placeholder="username">
             </div>
             <br>
 
             <br>
             <div>
-                Password:
+                Password: {{ password }}
                 <br>
-                <input type="text" name="password">
+                <input type="text" v-model="password" placeholder="password">
             </div>
             <br>
 
             <br>
             <div>
-                Again Password:
+                Again Password: {{ repassword }}
                 <br>
-                <input type="text" name="repassword">
+                <input type="text" v-model="repassword" placeholder="repassword">
             </div>
             <br>
 
 
             <br>
             <div>
-                First Name:
+                First Name: {{ firstname }}
                 <br>
-                <input type="text" name="firstname">
+                <input type="text" v-model="firstname" placeholder="firstname">
             </div>
             <br>
 
             <br>
             <div>
-                Last Name:
+                Last Name: {{ lastname }}
                 <br>
-                <input type="text" name="lastname">
+                <input type="text" v-model="lastname" placeholder="lastname">
             </div>
             <br>
 
             <br>
             <div>
-                Birthday:
+                Birthday: {{ birthday }}
                 <br>
-                <input type="text" name="birthday">
+                <input type="text" v-model="birthday" placeholder="2000/08/08">
             </div>
             <br>
 
             <br>
             <div>
-                <span>Sex: {{ sex }}</span>
+                <span>Sex: {{ currentSex }}</span>
                 <br>
-                <input type="radio" id="one" value="Male" v-model="sex">
-                <label for="one">Male</label>
+                <input type="radio" id="sex" value="male" v-model="currentSex">
+                <label for="sex">male</label>
                 <br>
-                <input type="radio" id="two" value="Female" v-model="sex">
-                <label for="two">Female</label>
+                <input type="radio" id="sex" value="female" v-model="currentSex">
+                <label for="sex">female</label>
             </div>
             <br>
 
             <br>
             <div>
-                <span>Age: {{ age }}</span>
+                <span>Age: {{ currentAge }}</span>
                 <br>
-                <select v-model="age" name="age">
+                <select v-model="currentAge" id="age">
                     <option disabled value="">Select</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
-                    <option>14</option>
-                    <option>15</option>
-                    <option>16</option>
-                    <option>17</option>
-                    <option>18</option>
-                    <option>19</option>
+                    <option v-for="age in ages">{{ age }}</option>
                 </select>
             </div>
             <br>
 
             <br>
             <div>
-                Wechart:
+                Wechart: {{ wechart }}
                 <br>
-                <input type="text" name="wechart">
+                <input type="text" v-model="wechart" placeholder="wechart's name">
             </div>
             <br>
 
             <br>
             <div>
-                QQ:
+                QQ: {{ qq }}
                 <br>
-                <input type="text" name="qq">
+                <input type="text" v-model="qq" placeholder="12345678">
             </div>
             <br>
 
             <br>
             <div>
-                Email:
+                Email: {{ email }}
                 <br>
-                <input type="text" name="email">
+                <input type="text" v-model="email" placeholder="12345678@qq.com">
             </div>
             <br>
 
             <br>
             <div>
-                Contury:
+                Contury: {{ contury }}
                 <br>
-                <input type="text" name="contury">
+                <input type="text" v-model="contury" placeholder="China">
             </div>
             <br>
 
             <br>
             <div>
-                Address:
+                Address: {{ address }}
                 <br>
-                <input type="text" name="address">
+                <input type="text" v-model="address" placeholder="Guangzhou">
             </div>
             <br>
 
             <br>
             <div>
-                Phone:
+                Phone: {{ phone }}
                 <br>
-                <input type="text" name="phone">
+                <input type="text" v-model="phone" placeholder="138********">
             </div>
             <br>
 
             <br>
             <div>
-                Websize:
+                Websize: {{ websize }}
                 <br>
-                <input type="text" name="websize">
+                <input type="text" v-model="websize" placeholder="xxx.com">
             </div>
             <br>
 
             <br>
             <div>
-                Github:
+                Github: {{ github }}
                 <br>
-                <input type="text" name="github">
+                <input type="text" v-model="github" placeholder="Github's URl">
             </div>
             <br>
 
             <br>
             <div>
-                Bio:
+                Bio: {{ bio }}
                 <br>
-                <input type="text" name="bio">
+                <input type="text" v-model="bio" placeholder="This is the world~">
             </div>
             <br>
 
@@ -183,9 +165,21 @@
             <input type="submit" value="完成注册">
         </form>
 
+        <button v-on:click="addUser">addUser</button>
+
         <a href="./index.html">Return index's page</a>
         <br>
         <br>
+
+        <div>
+            <ul>
+                <li v-for="record in commits">
+                    <span class="username">
+                        {{ record }}
+                    </span>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <script src="./js/signup.js"></script>
