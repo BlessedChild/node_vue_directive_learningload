@@ -15,7 +15,7 @@
         <div>This is signup's page by ArthurSlog</div>
         <p>Singup</p>
 
-        <form id="form" v-on:submit="addUser">
+        <form id="form" v-on:submit.prevent="addUser">
 
             <br>
             <div>
@@ -172,13 +172,7 @@
         <br>
 
         <div>
-            <ul>
-                <li v-for="record in commits">
-                    <span class="username">
-                        {{ record }}
-                    </span>
-                </li>
-            </ul>
+            {{ commits }}
         </div>
     </div>
 

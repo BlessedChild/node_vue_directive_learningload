@@ -23,11 +23,13 @@ var signup_container = new Vue({
       websize: '',
       github: '',
       bio: '',
-      commits: ['null', 'null']
+      commits: null
     },
     methods: {
       addUser: function () {
         var xhr = new XMLHttpRequest()
+
+        /*
         xhr.open('GET', host + 'name=' + this.name + '&password=' + this.password + '&firstname=' + 
         this.firstname + '&lastname=' + this.lastname + '&birthday=' + this.birthday
         + '&sex=' + this.currentSex + '&age=' + this.currentAge + '&wechart=' + this.wechart
@@ -35,7 +37,8 @@ var signup_container = new Vue({
         + '&address=' + this.address + '&phone=' + this.phone + '&websize=' + this.websize
         + '&github=' + this.github + '&bio=' + this.bio, true)
         xhr.send()
-        /*
+        */
+
         var self = this
         xhr.open('GET', host + 'name=' + self.name + '&password=' + self.password + '&firstname=' + 
         self.firstname + '&lastname=' + self.lastname + '&birthday=' + self.birthday
@@ -45,10 +48,9 @@ var signup_container = new Vue({
         + '&github=' + self.github + '&bio=' + self.bio, true)
         
         xhr.onload = function () {
-          self.commits = JSON.parse(xhr.responseText)
-          console.log(self.commits)
+          self.commits = xhr.responseText
         }
-        */
+        
         xhr.send()
       }
     }
