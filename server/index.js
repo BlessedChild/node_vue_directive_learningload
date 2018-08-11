@@ -18,7 +18,7 @@ router.get('/signin', async (ctx) => {
         database: 'my_db'
     });
 
-    
+
     connection.connect(function (err) {
         if (err) {
             console.error('error connecting: ' + err.stack);
@@ -26,7 +26,7 @@ router.get('/signin', async (ctx) => {
         }
         console.log('connected as id ' + connection.threadId);
     });
-    
+
 
     var response = {
         "name": ctx.query.name,
@@ -55,11 +55,16 @@ router.get('/signin', async (ctx) => {
         });
     });
 
-    
+    /*
     if(datas){
         ctx.redirect('account.html');
     }
-    
+    */
+
+    if (datas) {
+        ctx.body = datas;
+    }
+
     /*
     let myFirstPromise = new Promise((resolve, reject) => {
         // We call resolve(...) when what we were doing asynchronously was successful, and reject(...) when it failed.
@@ -89,7 +94,7 @@ router.get('/signin', async (ctx) => {
     console.log(successMessage);
     });
     */
-    connection.end();  
+    connection.end();
 });
 
 //
@@ -103,7 +108,7 @@ router.get('/signup', async (ctx) => {
         database: 'my_db'
     });
 
-    
+
     connection.connect(function (err) {
         if (err) {
             console.error('error connecting: ' + err.stack);
@@ -131,23 +136,23 @@ router.get('/signup', async (ctx) => {
         "bio": ctx.query.bio
     };
 
-    var  addSql = 'INSERT INTO ArthurSlogAccount(AccountName, Password, Firstname, Lastname, Birthday, Sex, Age, Wechart, Qq, Email, Contury, Address, Phone, Websize, Github, Bio) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
-    var  addSqlParams = [response.name, response.password, response.firstname, response.lastname, response.birthday, response.sex, response.age, response.wechart, response.qq, response.email, response.contury, response.address, response.phone, response.websize, response.github, response.bio];
+    var addSql = 'INSERT INTO ArthurSlogAccount(AccountName, Password, Firstname, Lastname, Birthday, Sex, Age, Wechart, Qq, Email, Contury, Address, Phone, Websize, Github, Bio) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+    var addSqlParams = [response.name, response.password, response.firstname, response.lastname, response.birthday, response.sex, response.age, response.wechart, response.qq, response.email, response.contury, response.address, response.phone, response.websize, response.github, response.bio];
 
 
 
     ctx.body = await new Promise((resolve, reject) => {
 
-        connection.query(addSql,addSqlParams,function (err, result) {
-            if(err){
+        connection.query(addSql, addSqlParams, function (err, result) {
+            if (err) {
                 reject(err);
-                console.log('[INSERT ERROR] - ',err.message);
+                console.log('[INSERT ERROR] - ', err.message);
                 return;
             }
             resolve('Singup Successful!');
         });
     });
-    
+
     /*
     let myFirstPromise = new Promise((resolve, reject) => {
         // We call resolve(...) when what we were doing asynchronously was successful, and reject(...) when it failed.

@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/style.css" >
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>signin_ArthurSlog</title>
 </head>
 
@@ -13,18 +15,21 @@
         <div>This is signin's page by ArthurSlog</div>
         <p>Singin</p>
         <form action="http://127.0.0.1:3000/signin" method="GET">
-            Name: <br>
-            <input type="text" name="name"> 
+            Name:
             <br>
-            Password: <br>
+            <input type="text" name="name">
+            <br> Password:
+            <br>
             <input type="text" name="password">
-            <br><br>
+            <br>
+            <br>
             <input type="submit" value="登陆">
         </form>
         <br>
         <a href="./index.html">Return index's page</a>
     </div>
 
+    <script src="./js/signup.js"></script>
 </body>
 
 </html>
