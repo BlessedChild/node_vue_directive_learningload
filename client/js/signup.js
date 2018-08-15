@@ -29,28 +29,36 @@ var signup_container = new Vue({
     pagestate: '0'
   },
   methods: {
+    return_index: function() {
+      this.pagestate = '0'
+    },
     signin_index: function () {
       this.pagestate = '1';
     },
     signup_index: function () {
       this.pagestate = '2'
     },
-    return_index: function() {
-      this.pagestate = '0'
-    },
     signin: function () {
+      //当点击登陆的时候，在页面上渲染从服务端返回的数据，把其他的部分隐藏掉
+      this.pagestate = '3'
+
       var xhr = new XMLHttpRequest()
 
       var self = this
       xhr.open('GET', host + 'signin?' + 'name=' + self.name_signin + '&password=' + self.password_signin, true)
 
       xhr.onload = function () {
-        self.commits = xhr.responseText
+        //self.commits = xhr.responseText
+        var myObj = JSON.parse(xhr.responseText);
+        self.commits = myObj
       }
 
       xhr.send()
     },
     addUser: function () {
+      //当点击注册的时候，在页面上渲染从服务端返回的数据，把其他的部分隐藏掉
+      this.pagestate = '3'
+
       var xhr = new XMLHttpRequest()
 
       /*
