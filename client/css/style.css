@@ -1,21 +1,13 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 300px;
-  }
-
-.signin-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  } 
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #ff0000;
+}
 
 #signup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style.css.map */

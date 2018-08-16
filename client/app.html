@@ -211,6 +211,8 @@
             <div v-for="(value, key) in commits">
                 {{ key }}: {{ value }}
             </div>
+
+            <div v-if="commits.ID !== null">ID : {{commits.ID}}</div>
         </template>
     </div>
 
