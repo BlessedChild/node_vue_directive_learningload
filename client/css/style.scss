@@ -7,8 +7,21 @@ body {
 }
 
 #signup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#signinResult {
+  display: flex;
+  flex-direction: column;
+}
+
+#signinResult > div {
+  background-color: #f1f1f1;
+  width: 300px;
+  margin: 5px;
+  text-align: left;
+  line-height: 50px;
 }
