@@ -208,15 +208,19 @@
         </template>
 
         <template id="returnResult" v-else-if="pagestate === '3'">
+            <div>
+                <img id="ArthurSlog_icon" src="/image/ArthurSlog.png" alt="ArthurSlog_icon" />
+            </div>
             <div id="signinResult">
                 <div v-for="(value, key) in commits">
                     {{ key }}: {{ value }}
                 </div>
             </div>
+            <div>
+                <button v-on:click="uploadimage">uploadimage</button>
+            </div>
         </template>
     </div>
-
-
     <script src="./js/signup.js"></script>
 </body>
 

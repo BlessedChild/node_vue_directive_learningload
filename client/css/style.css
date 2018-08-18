@@ -23,4 +23,13 @@ body {
   line-height: 50px;
 }
 
+#ArthurSlog_icon {
+  object-position: 50% 50%;
+  width: 300px;
+  object-fit: contain;
+  border: 1px solid #abffd8;
+  border-radius: 30px;
+  background-color: silver;
+}
+
 /*# sourceMappingURL=style.css.map */
