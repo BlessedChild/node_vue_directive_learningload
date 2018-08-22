@@ -30,8 +30,22 @@ var signup_container = new Vue({
     image: ''
   },
   methods: {
-    filesChange: function(event) {
-      this.image = event.target.files[0].name
+    uploadfiles: function () {
+      var xhr = new XMLHttpRequest()
+      var fd = new FormData();
+
+      var self = this
+      xhr.open('POST', host + 'uploadfiles', true)
+
+      xhr.onload = function () {
+        //self.commits = xhr.responseText
+        self.commits = xhr.responseText
+      }
+      fd.append('myFile', this.image);
+      xhr.send(fd)
+    },
+    filesChange: function (event) {
+      this.image = event.target.files[0]
     },
     return_index: function () {
       this.pagestate = '0'

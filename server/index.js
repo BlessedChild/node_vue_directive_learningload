@@ -3,6 +3,8 @@ const Koa = require('koa');
 const app = new Koa();
 const Router = require('koa-router');
 const router = new Router();
+const fs = require("fs");
+const koaBody = require('koa-body');
 
 // $ GET /package.json
 app.use(serve('../client'));
@@ -183,6 +185,18 @@ router.get('/signup', async (ctx) => {
     });
     */
     connection.end();
+});
+
+router.post('/uploadfiles', koaBody({multipart: true}), async (ctx) => {
+
+    console.log('fields: ', ctx.request.fields);
+
+    console.log('files: ', ctx.request.files);
+
+    const file = ctx.request.files.myFile;
+    const reader = fs.createReadStream(file.path);
+    const stream = fs.createWriteStream('ArthurSlog_icon' + '.jpg');
+    reader.pipe(stream);
 });
 
 app.use(router.routes());

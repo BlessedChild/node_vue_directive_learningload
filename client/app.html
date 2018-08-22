@@ -215,6 +215,8 @@
                 <div>Uploading {{ image }} files...</div>
                 <br>
                 <input type="file" v-on:change="filesChange">
+                <br>
+                <button v-on:click="uploadfiles">uploadfiles</button>
             </div>
             <div id="signinResult">
                 <div v-for="(value, key) in commits">
