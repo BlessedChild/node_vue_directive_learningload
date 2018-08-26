@@ -209,7 +209,7 @@
 
         <template id="returnResult" v-else-if="pagestate === '3'">
             <div>
-                <img id="ArthurSlog_icon" src="/image/ArthurSlog_icon.jpg" alt="ArthurSlog_icon" />
+                <img id="ArthurSlog_icon" v-bind:src="imageSrc" alt="ArthurSlog_icon" />
             </div>
             <div>
                 <div>Uploading {{ image }} files...</div>

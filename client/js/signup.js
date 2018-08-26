@@ -27,12 +27,13 @@ var signup_container = new Vue({
     bio: '',
     commits: null,
     pagestate: '0',
-    image: ''
+    image: '',
+    imageSrc: '/image/ArthurSlog_icon.jpg'
   },
   methods: {
     uploadfiles: function () {
       var xhr = new XMLHttpRequest()
-      var fd = new FormData();
+      var fd = new FormData()
 
       var self = this
       xhr.open('POST', host + 'uploadfiles', true)
@@ -41,11 +42,12 @@ var signup_container = new Vue({
         //self.commits = xhr.responseText
         self.commits = xhr.responseText
       }
-      fd.append('myFile', this.image);
+      fd.append('myFile', this.image)
       xhr.send(fd)
     },
     filesChange: function (event) {
       this.image = event.target.files[0]
+      this.imageSrc = URL.createObjectURL(event.target.files[0])
     },
     return_index: function () {
       this.pagestate = '0'
@@ -63,6 +65,7 @@ var signup_container = new Vue({
       var xhr = new XMLHttpRequest()
 
       var self = this
+
       xhr.open('GET', host + 'signin?' + 'name=' + self.name_signin + '&password=' + self.password_signin, true)
 
       xhr.onload = function () {
