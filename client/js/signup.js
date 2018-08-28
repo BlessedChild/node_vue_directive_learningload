@@ -70,7 +70,7 @@ var signup_container = new Vue({
 
       xhr.onload = function () {
         //self.commits = xhr.responseText
-        var myObj = JSON.parse(xhr.responseText);
+        var myObj = JSON.parse(xhr.responseText)
         self.commits = myObj
       }
 
